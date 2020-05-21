@@ -6,53 +6,40 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Theming - Semantic</title>
+  <title>EYE</title>
 
   <!--- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
   <!--- Semantic-UI -->
   <link rel="stylesheet" type="text/css" href="assets/css/semantic.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
   <script type="text/javascript" src="assets/js/semantic.js"></script>
 
   <!--- Initialize Semantic components -->
   <script>
     $(document)
       .ready(function () {
-        $('.ui.accordion').accordion();
+        $('.ui.accordion').accordion({ exclusive: false });
+        $('.ui.checkbox').checkbox();
+        $('.ui.rating').rating({ initialRating: 0, maxRating: 10 });
+        $('.ui.progress').progress({
+          label: 'ratio',
+          text: {
+            ratio: '{value} of {total}'
+          },
+          value: 1,
+          total: 5
+        });
       })
       ;
   </script>
 
-  <!--- Custom css -->
-  <style>
-    body,
-    html {
-      width: 100%;
-      height: 100%;
-      padding: 2em;
-      background-color: black;
-    }
-
-    .ui.checkbox label {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .ui.header {
-      text-align: center;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .mainform {
-      margin: auto;
-      width: 75%;
-      max-width: 650px;
-    }
-  </style>
 </head>
 
 <body>
 
+  <!-- Title -->
   <h1 class="ui header">
     <span style="color: rgba(255, 255, 255, 0.5)">
       the
@@ -63,91 +50,178 @@
     </span>
   </h1>
 
+  <!-- Main form -->
+  <div class="ui mainform">
 
-
-  <div class="mainform">
-
+    <!-- Prompt -->
     <div class="ui inverted segment">
-      <h4 class="ui horizontal inverted divider">
-        EYE0001
-      </h4>
+      <div class="ui inverted vertical accordion fluid menu">
+
+        <!-- Brief prompt -->
+        <div style="margin-bottom: 1em;">
+          Locate objects
+          <span style="font-weight:bold;">A</span>
+          and
+          <span style="font-weight:bold;">B</span>
+          on the sky.
+        </div>
+
+        <!-- Finding chart -->
+        <div style="margin-bottom: 1em;">
+          <img src="assets/images/example.jpg" width="100%">
+        </div>
+
+        <!-- Detailed prompt -->
+        <div class="item">
+          <a class="title">
+            <i class="dropdown icon"></i>
+            Detailed instructions
+          </a>
+          <div class="content instructions">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="ui vertical accordion fluid inverted menu">
-      <div class="item">
-        <a class="active title">
-          <i class="dropdown icon"></i>
-          Size
-        </a>
-        <div class="active content">
-          <div class="ui form">
-            <div class="grouped fields">
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="size" value="small">
-                  <label>Small</label>
+    <!-- Questions -->
+    <div class="ui inverted segment">
+      <div class="ui inverted vertical accordion fluid menu">
+
+        <!-- Brighter star -->
+        <div class="item">
+          <a class="active title">
+            <i class="dropdown icon"></i>
+            Which object is brighter?
+          </a>
+          <div class="active content">
+            <div class="ui form">
+              <div class="grouped fields">
+
+                <div class="mini ui buttons">
+                  <button class="mini ui button">A</button>
+                  <div class="mini or"></div>
+                  <button class="mini ui button">B</button>
                 </div>
+
               </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="size" value="medium">
-                  <label>Medium</label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Relative brightness -->
+        <div class="item">
+          <a class="active title">
+            <i class="dropdown icon"></i>
+            How much brighter?
+          </a>
+          <div class="active content">
+            <div class="ui star rating">
+            </div>
+          </div>
+        </div>
+
+        <!-- Observing method -->
+        <div class="item">
+          <a class="title">
+            <i class="dropdown icon"></i>
+            Observing method
+          </a>
+          <div class="content">
+            <div class="ui form">
+              <div class="grouped fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="small" checked>
+                    <label>Naked eye</label>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="size" value="large">
-                  <label>Large</label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" name="size" value="x-large">
-                  <label>X-Large</label>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="medium">
+                    <label>Binoculars</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="item">
-        <a class="title">
-          <i class="dropdown icon"></i>
-          Colors
-        </a>
-        <div class="content">
-          <div class="ui form">
-            <div class="grouped fields">
-              <div class="field">
-                <div class="ui checkbox">
-                  <input type="checkbox" name="small">
-                  <label>Red</label>
+
+        <!-- Issues -->
+        <div class="item">
+          <a class="title">
+            <i class="dropdown icon"></i>
+            Issues
+          </a>
+          <div class="content">
+            <div class="ui form">
+              <div class="grouped fields">
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" name="small">
+                    <label>Cloudy/hazy</label>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <div class="ui checkbox">
-                  <input type="checkbox" name="medium">
-                  <label>Orange</label>
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" name="medium">
+                    <label>Buildings/trees in the way</label>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <div class="ui checkbox">
-                  <input type="checkbox" name="large">
-                  <label>Green</label>
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" name="large">
+                    <label>City lights too bright</label>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <div class="ui checkbox">
-                  <input type="checkbox" name="x-large">
-                  <label>Blue</label>
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" name="x-large">
+                    <label>Unable to find target</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" name="x-large">
+                    <label>Other</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
+
+    <!-- Progress -->
+
+    <div class="ui inverted vertical accordion fluid menu" style="padding:10px;">
+
+      <div class="ui red inverted progress">
+
+        <div class="bar" style="float:left; width:80%; height:30px;">
+          <div class="progress"></div>
+        </div>
+
+        <button class="ui right icon button" style="float:right; width:15%; height:30px;">
+          <i class="right arrow icon" style="margin-top:-1px !important;"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+
   </div>
+
 
 </body>
 

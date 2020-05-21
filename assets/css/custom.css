@@ -1,0 +1,71 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: black;
+}
+
+.ui.header {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.checkbox label {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.ui.checkbox input:active~label {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.ui.checkbox label:hover {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.ui.checkbox input:focus~label {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.ui.star.rating .icon {
+    color: rgba(90, 90, 90, 0.9);
+}
+
+.ui.star.rating .active.icon {
+    color: #ff695e !important;
+    text-shadow: 0px -1px 0px #a0413a, -1px 0px 0px #a0413a, 0px 1px 0px #a0413a, 1px 0px 0px #a0413a !important;
+}
+
+.ui.button:active {
+    background-color: #ff695e;
+}
+
+.ui.button:hover {
+    background-color: #ff695e;
+}
+
+.ui.button:focus {
+    background-color: #ff695e;
+}
+
+.mainform {
+    margin: auto;
+    width: 100%;
+    max-width: 650px;
+}
+
+.foot {
+    margin: auto;
+    width: 100%;
+    max-width: 650px;
+}
+
+.content.instructions {
+    text-align: justify; 
+    hyphens: auto; 
+    font-size:smaller; 
+    color: rgba(255, 255, 255, 0.75);
+}

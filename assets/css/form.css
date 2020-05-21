@@ -1,0 +1,40 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0em;
+    background-color: black;
+}
+
+.ui.checkbox label {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.ui.checkbox input:active~label {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.ui.checkbox label:hover {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.ui.checkbox input:focus~label {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.ui.star.rating .icon {
+    color: rgba(90, 90, 90, 0.9);
+}
+
+.mainform {
+    margin: auto;
+    width: 100%;
+    max-width: 650px;
+}
+
+.content.instructions {
+    text-align: justify; 
+    hyphens: auto; 
+    font-size:smaller; 
+    color: rgba(255, 255, 255, 0.75);
+}
