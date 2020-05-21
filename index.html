@@ -24,77 +24,123 @@
       ;
   </script>
 
+  <!--- Custom css -->
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      padding: 2em;
+      background-color: black;
+    }
+
+    .ui.checkbox label {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .ui.header {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .mainform {
+      margin: auto;
+      width: 75%;
+      max-width: 650px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="ui vertical accordion menu">
-    <div class="item">
-      <a class="active title">
-        <i class="dropdown icon"></i>
-        Size
-      </a>
-      <div class="active content">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="small">
-                <label>Small</label>
+  <h1 class="ui header">
+    <span style="color: rgba(255, 255, 255, 0.5)">
+      the
+    </span>
+    EYE
+    <span style="color: rgba(255, 255, 255, 0.5)">
+      telescope
+    </span>
+  </h1>
+
+
+
+  <div class="mainform">
+
+    <div class="ui inverted segment">
+      <h4 class="ui horizontal inverted divider">
+        EYE0001
+      </h4>
+    </div>
+
+    <div class="ui vertical accordion fluid inverted menu">
+      <div class="item">
+        <a class="active title">
+          <i class="dropdown icon"></i>
+          Size
+        </a>
+        <div class="active content">
+          <div class="ui form">
+            <div class="grouped fields">
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="size" value="small">
+                  <label>Small</label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="medium">
-                <label>Medium</label>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="size" value="medium">
+                  <label>Medium</label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="large">
-                <label>Large</label>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="size" value="large">
+                  <label>Large</label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="size" value="x-large">
-                <label>X-Large</label>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="size" value="x-large">
+                  <label>X-Large</label>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="item">
-      <a class="title">
-        <i class="dropdown icon"></i>
-        Colors
-      </a>
-      <div class="content">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" name="small">
-                <label>Red</label>
+      <div class="item">
+        <a class="title">
+          <i class="dropdown icon"></i>
+          Colors
+        </a>
+        <div class="content">
+          <div class="ui form">
+            <div class="grouped fields">
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="small">
+                  <label>Red</label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" name="medium">
-                <label>Orange</label>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="medium">
+                  <label>Orange</label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" name="large">
-                <label>Green</label>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="large">
+                  <label>Green</label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" name="x-large">
-                <label>Blue</label>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" name="x-large">
+                  <label>Blue</label>
+                </div>
               </div>
             </div>
           </div>
