@@ -1,2 +1,2 @@
-# het
-Human Eye Telescope
+# EYE
+Welcome to the EYE telescope
