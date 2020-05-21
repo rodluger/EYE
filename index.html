@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html>
 
-<style>
-    body,
-    html {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0
-    }
+<head>
 
-    .header {
-        text-align: center;
-    }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Theming - Semantic</title>
 
-    .container {
-        display: flex;
-        width: 100%;
-        height: 1816px;
-        flex-direction: column;
-        overflow: visible;
-    }
+  <!--- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    .poll {
-        flex-grow: 1;
-        border: none;
-        margin: 0;
-        padding: 0;
-    }
-</style>
+  <!--- Semantic-UI -->
+  <link rel="stylesheet" type="text/css" href="assets/css/semantic.css">
+  <script type="text/javascript" src="assets/js/semantic.js"></script>
 
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!--- Initialize Semantic components -->
+  <script>
+    $(document)
+      .ready(function () {
+        $('.ui.accordion').accordion();
+      })
+      ;
+  </script>
 
-<script>
-
-    // Poll urls
-    var url_pre = "https://docs.google.com/forms/d/e/";
-    var url_post = "/viewform?embedded=true";
-    var urls = [
-        "1FAIpQLSd3PB2w5nEJjaL-S0NLsisoluiZM3NmxCqMTwVwvTI8IJRs7g",
-        "1FAIpQLSfW1V0wk2NM8qEW4roz4OsGBhixEwSumAP76VlOfrRT2Q5Ndg"
-    ];
-
-    $(document).ready(function () {
-
-        // Get UTC
-        var utc = new Date().toUTCString();
-        p_utc.innerHTML = `${utc}`;
-
-        // Get user location
-        var lat = 0;
-        var lon = 0;
-        var p_latlon = document.getElementById("latlon");
-        var options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
-        };
-        function success(pos) {
-            var crd = pos.coords;
-            lat = crd.latitude;
-            lon = crd.longitude;
-            p_lat.innerHTML = `Latitude : ${crd.latitude}`;
-            p_lon.innerHTML = `Longitude: ${crd.longitude}`;
-
-            // Set the poll url
-            var iframe_poll = document.getElementById("iframe_poll");
-
-            // TODO: Add actual latlon rules
-            if (lon < 0)
-                iframe_poll.src = url_pre + urls[0] + url_post;
-            else
-                iframe_poll.src = url_pre + urls[1] + url_post;
-
-        }
-        function error(err) {
-            alert(`ERROR(${err.code}): ${err.message}`);
-        }
-        navigator.geolocation.getCurrentPosition(success, error, options);
-
-    });
-
-</script>
+</head>
 
 <body>
 
-    <div class="header">
-        <h1>The Human Eye Telescope</h1>
-        <p id="p_utc"></p>
-        <p id="p_lat"></p>
-        <p id="p_lon"></p>
+  <div class="ui vertical accordion menu">
+    <div class="item">
+      <a class="active title">
+        <i class="dropdown icon"></i>
+        Size
+      </a>
+      <div class="active content">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="small">
+                <label>Small</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="medium">
+                <label>Medium</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="large">
+                <label>Large</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="x-large">
+                <label>X-Large</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="container">
-        <iframe src="" class="poll" id="iframe_poll">
-            Loading...
-        </iframe>
+    <div class="item">
+      <a class="title">
+        <i class="dropdown icon"></i>
+        Colors
+      </a>
+      <div class="content">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="small">
+                <label>Red</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="medium">
+                <label>Orange</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="large">
+                <label>Green</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="x-large">
+                <label>Blue</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
+  </div>
 
 </body>
 
